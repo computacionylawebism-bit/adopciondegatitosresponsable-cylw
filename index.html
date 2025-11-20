@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>GATITOS EN ADOPCIÓN</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <header class="encabezado">
+        <h1 class="titulo-principal">¡Adoptá un nuevo amigo gatuno!</h1>
+
+        <div class="boton-destacado">
+            <button class="btn-principal" onclick="irAlFormulario()">¡Quiero adoptar un gatito!</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="contenedor">
+            <section class="seccion seccion-izquierda">
+                <h2>BIENVENIDOS A NUESTRA WEB DE ADOPCIÓN</h2>
+                <p>Gatitos que buscan un hogar lleno de amor.</p>
+                <ol>
+                    <li>Visitá nuestro refugio.</li>
+                    <li>Elegí al gatito que más conecte con vos.</li>
+                    <li>Firmá el formulario de adopción.</li>
+                </ol>
+
+                <h3>Algunos de nuestros gatitos</h3>
+                <div class="galeria-gatitos">
+                    <img src="IMG/gatitos en adopcion 1.jpg" alt="gatitos en adopción">
+                    <img src="IMG/gatitos en adopcion 2.jpg" alt="gatitos en adopción">
+                    <img src="IMG/gatitos en adopcion 3.jpeg" alt="gatitos en adopción">
+                </div>
+            </section>
+
+            <section class="seccion seccion-derecha">
+                <div class="texto-derecha">
+                    <h2>Gatitos que buscan un hogar lleno de amor</h2>
+                    <ul class="lista-info">
+                        <li>
+                            <strong>Requisitos para adoptar:</strong><br>
+                            Ser mayor de edad, tener domicilio fijo y firmar un acuerdo de adopción responsable.
+                        </li>
+                        <li>
+                            <strong>Beneficios de la adopción responsable:</strong><br>
+                            Adoptar salva una vida, genera una conexión afectiva única y ayuda a combatir el abandono animal.
+                        </li>
+                        <li>
+                            <strong>Cómo prepararte para recibir a tu gatito:</strong><br>
+                            Tener un espacio seguro, alimento adecuado, elementos de higiene y tiempo para dedicarle.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="imagen-columna-derecha">
+                    <img src="IMG/adopcion.jpg" alt="gatito esperando adopción">
+                </div>
+            </section>
+        </div>
+
+        <section class="seccion formulario-seccion" id="formulario-adopcion">
+            <h2>Formulario de contacto para la adopción</h2>
+            <form class="formulario" onsubmit="return validarFormulario()">
+                <div class="grupo-campo">
+                    <label for="celular">Celular:</label>
+                    <input type="text" id="celular" name="celular" placeholder="Ej: 3794 123456">
+                </div>
+                <input class="btn-principal" type="submit" value="Enviar">
+            </form>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <p>© 2025 - Computacion y la Web. Caceres, Diego . Profesorado de Informatica.</p>
+    </footer>
+
+    <script>
+        function validarFormulario() {
+            let celular = document.getElementById("celular").value.trim();
+            if (celular === "") {
+                alert("Por favor, escribí tu celular para que nos podamos contactar.");
+                return false;
+            }
+            alert("Formulario enviado correctamente. ¡Nos contactaremos al " + celular + "!");
+            return true;
+        }
+
+        function irAlFormulario() {
+            const seccionFormulario = document.getElementById("formulario-adopcion");
+            if (seccionFormulario) {
+                seccionFormulario.scrollIntoView({ behavior: "smooth" });
+                setTimeout(function () {
+                    alert("¡Gracias por tu interés! Completá el formulario para que podamos contactarte ❤️");
+                }, 700);
+            }
+        }
+    </script>
+</body>
+</html>
